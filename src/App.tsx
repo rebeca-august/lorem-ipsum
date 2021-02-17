@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import data from './data'
-function App() {
-  const [count, setCount] = useState(0)
-  const [text, setText] = useState([])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+function App() {
+  const [count, setCount] = useState<string>('0')
+  const [text, setText] = useState<string[]>([])
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
     let amount = parseInt(count)
     if (amount <= 0) {
       amount = 1
